@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% if page.title != null %}{{page.title}} - {% endif %}MrMC media center</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-itunes-app" content="app-id={{ site.app-id }}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+	</head>
+	<body>
+		<div id="background">&nbsp;</div>
+		<div id="wrapper">
+			<header><h1><a href="/">MrMC Media Center</a></h1></header>
+			{% include nav.html %}
+			<section>

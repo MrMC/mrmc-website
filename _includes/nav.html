@@ -1,0 +1,9 @@
+<nav>
+  <ul id="menu">
+    <li>Navigation</li>
+    {% for page in site.nav-menu %}
+      <li><a href="{{ page[2] }}">{{ page[0] }}</a></li>
+    {% endfor %}
+     <li><a href="https://twitter.com/MrMC_tv" target="_blank">Follow us on twitter</a></li>
+  </ul>
+</nav>

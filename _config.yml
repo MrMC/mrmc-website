@@ -1,0 +1,34 @@
+# Where things are
+source:      .
+destination: ./_site
+plugins_dir:     ./_plugins
+layouts_dir:     ./_layouts
+data_dir: ./_data
+app-id: 1062986407
+analytics-id: UA-67513664-1
+
+nav-menu: [
+  [Home, 65, '/'],
+  [Forum, 72, 'http://forum.mrmc.tv/'],
+  #[Download, 113, '/download/'],
+  #[About, 70, '/about/'],
+  [Contact, 89, '/contact/']
+]
+
+mobile-breakpoint: 550px
+
+gems:
+  - octopress-autoprefixer
+
+compress_html:
+  clippings: [div, p, ul, li, td, h1, h2, br]
+  
+sass:
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
