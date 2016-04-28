@@ -75,7 +75,8 @@ ul {
   }
 }
 
-$badge-aspect: 40 / 135;
+$apple-badge-aspect: 40 / 135;
+$amazon-badge-aspect: 46 / 135;
 a.app-badge {
   @extend %no-text;
   font-size:.1%;
@@ -84,11 +85,23 @@ a.app-badge {
   &:after {
     display:block;
     width:100%;
-    padding-bottom:40 / 135 * 100%;
     display:block;
     content:'';
-    background:url(/images/app-badge.svg) no-repeat;
-    background-size: 100% 100%;
+  }
+  
+  &.apple {
+    &:after {
+      padding-bottom: $apple-badge-aspect * 100%;
+      background:url(/images/apple-app-badge.svg) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  &.amazon {
+    &:after {
+      padding-bottom: $amazon-badge-aspect * 100%;
+      background:url(/images/amazon-app-badge.png) no-repeat;
+      background-size: 100% 100%;
+    }
   }
 }
 
@@ -178,22 +191,25 @@ section, footer {
   padding: $spacing;
 }
 .app-description {
+  $amazon-scale-factor: 40 / 46;
   position:relative;
-  $icon-size: 152px;
-  $left-height:$icon-size + ($icon-size * $badge-aspect) + $spacing;
+  $icon-size: 180px;
+  $left-height:$icon-size + ($icon-size * $apple-badge-aspect) + $spacing + ($icon-size * $amazon-badge-aspect) + $spacing;
   background:url(/images/app-icon.svg) no-repeat;
   background-size:$icon-size $icon-size;
-  padding: 0 0 0 ($icon-size + $spacing);
-  min-height:$left-height;
+  padding: 0 0 #{(152px * $apple-badge-aspect) + $spacing} ($icon-size + $spacing);
+  min-height:$icon-size + $spacing;
   .app-badge {
-    width:$icon-size;
-    height:$left-height;
+    width: 152px;
     position:absolute;
-    left:0;
-    top:0;
-    &:after {
-      position:absolute;
-      bottom:0;
+    bottom: $spacing;
+    &.amazon {
+      right: 0;
+      width: 152px * $amazon-scale-factor;
+      left: $icon-size + $spacing + 152px + $spacing;
+    }
+    &.apple {
+      left: $icon-size + $spacing;
     }
   }
 }
@@ -266,6 +282,16 @@ footer {
     }
   }
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+  .app-badge.amazon {
+    background:url(/images/amazon-app-badge.2x.png) no-repeat;
+    background-size: 100% 100%;
+  }
+}
 @media only screen and (max-width : nth($breakpoints, 1)) {
   figure.screenshots li {
     width:50%;
@@ -330,13 +356,23 @@ footer {
     .app-badge {
       font-size:1em;
       position:relative;
-      top:auto;
+      top:auto !important;
+      display:block;
       bottom:auto;
-      left:50%;
+      left:50% !important;
       right:auto;
-      width:188px;
-      height:188px * $badge-aspect;
+      width:188px !important;
       margin:0 0 $spacing (-(188px / 2));
+      &:after {
+        position:absolute;
+        top:0 !important;
+      }
+      &.apple {
+        height:188px * $apple-badge-aspect;
+      }
+      &.amazon {
+        height:188px * $amazon-badge-aspect;
+      }
     }
   }
   
