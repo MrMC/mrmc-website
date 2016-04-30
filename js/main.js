@@ -3,7 +3,9 @@ layout: null
 ---
 
 {% include magnific-popup.v1.0.1-min.js %}
+{% include retina.js %}
 $(function(){
+	$("img").retina();
   $(".screenshots a").magnificPopup({
     type: 'image',
     gallery:{

@@ -4,7 +4,9 @@ destination: ./_site
 plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 data_dir: ./_data
-app-id: 1062986407
+ios-app-id: 1062986407
+tvos-app-id: 1059536415
+amazon-app-id: B01ENT3I1Q
 analytics-id: UA-67513664-1
 
 nav-menu: [
