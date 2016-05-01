@@ -28,6 +28,11 @@ body {
   background-color:#000;
 }
 
+img {
+  max-width:100%;
+  &.apple-devices { width: 600px; }
+}
+
 #background {
   position: fixed;
   top:0;
@@ -271,7 +276,7 @@ figure.screenshots {
   }
 }
 
-.download-center { text-align:center; }
+.download-center, .text-center { text-align:center; }
 
 footer {
   span {
