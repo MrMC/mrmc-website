@@ -11,7 +11,8 @@ analytics-id: UA-67513664-1
 
 nav-menu: [
   [Home, 65, '/'],
-  [Forum, 72, 'http://forum.mrmc.tv/'],
+  [Forum, 72, 'https://forum.mrmc.tv/'],
+  [Wiki, 65, 'http://wiki.mrmc.tv/'],
   #[Download, 113, '/download/'],
   #[About, 70, '/about/'],
   [Contact, 89, '/contact/']
