@@ -82,6 +82,7 @@ ul {
 
 $apple-badge-aspect: 40 / 135;
 $amazon-badge-aspect: 46 / 135;
+$google-badge-aspect: 40 / 135;
 a.app-badge {
   @extend %no-text;
   font-size:.1%;
@@ -105,6 +106,13 @@ a.app-badge {
     &:after {
       padding-bottom: $amazon-badge-aspect * 100%;
       background:url(/images/amazon-app-badge.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  &.google {
+    &:after {
+      padding-bottom: $google-badge-aspect * 100%;
+      background:url(/images/en_badge_web_generic.png) no-repeat;
       background-size: 100% 100%;
     }
   }
@@ -208,6 +216,9 @@ section, footer {
     width: 152px;
     position:absolute;
     bottom: $spacing;
+    &.google {
+      left: $icon-size + $spacing + 152px + $spacing + 152px;
+    }
     &.amazon {
       right: 0;
       width: 152px * $amazon-scale-factor;
@@ -377,6 +388,9 @@ only screen and (min-device-pixel-ratio: 1.5) {
       }
       &.amazon {
         height:188px * $amazon-badge-aspect;
+      }
+      &.google {
+        height:188px * $google-badge-aspect;
       }
     }
   }
